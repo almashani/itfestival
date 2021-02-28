@@ -1,0 +1,133 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>IT Festival 2021</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form class="sign-in-form"  method="POST" autocomplete="off" name="google-sheet">
+            <img src="img/logo.png" class="img"  alt="" />
+            <h2 class="title">Register here to receive a certificate of participation</h2>
+
+             <div class="input-field">
+              <input type="text" name="Name" placeholder="Name" required />
+              </div>
+
+              <div class="input-field">
+              <input type="tel" name="Phone" placeholder="Phone Number" required />
+              </div>
+
+              <div class="input-field">
+              <input type="text" name="Academic ID" placeholder="Academic ID" required />
+              </div>
+
+              <div class="input-field">
+              <input list="browsers" name="Specialization" placeholder="Specialization" required>
+             <datalist id="browsers">
+             <option value="IT">
+             <option value="Engineering">
+             <option value="Business">
+              <option value="ELC">
+              </datalist>
+            </div>
+            
+              <input type="submit"  class="btn solid" value="submit" />
+
+            <p class="social-text"> social platforms</p>
+            <div class="social-media">
+              <a href="https://www.instagram.com/utas_salalah/" class="social-icon">
+                <i class="fab fa-instagram -f"></i>
+              </a>
+              <a href="https://twitter.com/utas_sll" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.youtube.com/user/sct608" class="social-icon">
+                <i class="fab fa-youtube"></i>
+              </a>
+              
+              
+            </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h3>Have you registered ?</h3>
+            <p style="text-align: center;">
+                If you are not registered, press the Register button to register with us and obtain a certificate of participation.
+              
+            </p>
+            <button class="btn" id="sign-in-btn">
+              Start
+          </button>
+              
+         <p class="social-text">social platforms</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/utas_salalah/" class="social-icon">
+                    <i class="fab fa-instagram -f"></i>
+                  </a>
+                  <a href="https://twitter.com/utas_sll" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.youtube.com/user/sct608" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Welcome!</h3>
+            <p>
+                Featuring: Specialization Activities, Industry Talks, Workshops, Entreprenuership and Innovation Activities, Competitions
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+                Start
+            </button>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>IT Festival 2021 </h3>
+            <p>
+              Featuring: Specialization Activities, Industry Talks, Workshops, Entreprenuership and Innovation Activities, Competitions
+          </p>
+            
+            <a href="Timeline.html">
+            <button class="btn transparent"> 
+              Join now
+          </button></a>
+            
+          </div>
+          <img src="img/register.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+   
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzR2riHon3M8hAG7PI1N_q7mYZaKe-f6FJBTK0hekd3RidiDf_lZa8H/exec'
+                const form = document.forms['google-sheet']
+              
+                form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => alert("Thank you ..! You have been successfully registered ..."))
+                    .catch(error => console.error('Error!', error.message))
+                })
+    </script>
+     <script src="app.js"></script>
+    
+    
+  </body>
+</html>
